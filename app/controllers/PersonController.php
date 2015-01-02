@@ -77,13 +77,15 @@
 	        $slo4dtv = new Work();
 	        $fc = new Work();
 	        $pg = new Work();
+	        $py = new Work();
 	        $aap->setAttributes('AprenderAProgramar.com.co', 'Website for teaching programming. Created using HTML5, CSS3, JQuery and responsive design for the frontend and PHP for the backend; friendly URLs, MVC...', 'img/aap.png');
 	        $sofing->setAttributes('SofIng: Learning Object Repository', 'Web application for manage learning objects inside a repository. Created using HTML, CSS and JQuery for the frontend and JSP - MySQL for the backend.', 'img/sofing.png');
 	        $slo4dtv->setAttributes('SLO4DTV: Semantic Learning Objects for Digital TV', 'Web application for create and manage semantic learning objects for digital TV. Created using HTML5, CSS3 and JQuery for the frontend and PHP - MySQL - OWL - WS for the backend.', 'img/slo4dtv.png');
 	        $fc->setAttributes('Fundación compasión (Proposal)', 'Website prototype created to fundación compasión. Created using HTML5, CSS3.', 'img/fc.png');
 	        $pg->setAttributes('Public GYM', 'Website to teach people, how to use public gyms on the city. Created using HTML5, CSS3, jQuery and plugins.', 'img/pg.png');
-	        //$me->works()->saveMany(array($aap, $sofing, $slo4dtv, $fc, $pg));
-	        //$me->works()->save($pg);
+	        $py->setAttributes('ProgramarYA.com', 'Updated Website to teaching programming to visitors. Created using HTML5, CSS3, JQuery and responsive design for the frontend and PHP for the backend; friendly URLs, MVC...', 'img/progya.png');
+	        //$me->works()->saveMany(array($aap, $sofing, $slo4dtv, $fc, $pg, $py));
+	        //$me->works()->save($py);
 
 
 
