@@ -75,6 +75,9 @@ ul.social-icons li a {
 ul.social-icons li a:hover {
 	opacity:1;
 }
+ul.social-icons li a img {
+	border-radius: 5px;
+}
 /***** Skills *****/
 #skills .span3 {
 	width:235px;

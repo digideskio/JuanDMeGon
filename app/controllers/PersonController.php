@@ -25,7 +25,10 @@
 			$facebook = SocialNetwork::getFacebook('Como.Aprender.A.Programar');
 			$twitter = SocialNetwork::getTwitter('JuanDMeGon');
 			$linkedin = SocialNetwork::getLinkedIn('juan-david-meza-gonzález/55/558/407');
+			$github = SocialNetwork::getGitHub('JuanDMeGon');
+			$youtube = SocialNetwork::getYouTube('UC9yijqf0bO1NjIGUQ-dkBvg');
 			//$me->socialnetworks()->saveMany(array($facebook, $twitter, $linkedin));
+			//$me->socialnetworks()->save($youtube);
 
 			/*
 	        |--------------------------------------------

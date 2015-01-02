@@ -39,6 +39,20 @@
 			return $sn;
 		}
 
+		public static function getGitHub($link)
+		{
+			$sn = new SocialNetwork;
+			$sn->setAttributes('GitHub',"https://github.com/$link",'img/gh.png');
+			return $sn;
+		}
+
+		public static function getYouTube($link)
+		{
+			$sn = new SocialNetwork;
+			$sn->setAttributes('YouTube',"https://www.youtube.com/channel/$link",'img/yt.png');
+			return $sn;
+		}
+
 		public function getName()
 		{
 			return $this->name;
