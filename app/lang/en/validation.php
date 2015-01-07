@@ -103,7 +103,8 @@ return array(
 
 	'attributes' => array
 	(
-		'g-recaptcha-response' => 'validation'
+		'g-recaptcha-response' => 'validation',
+		'email' => 'e-mail'
 	),
 
 );

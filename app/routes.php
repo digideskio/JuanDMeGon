@@ -20,12 +20,14 @@
 */
 $portfolio = function()
 {
-	Route::get('/', 'PersonController@showPerson');
+	Route::get('/{lang?}', 'PersonController@showPerson');
 	Route::post('message', array('before' => 'csrf', 'uses' => 'MessageController@sendMessage'));
 	Route::get('message', function()
 	{
 		return $redirect = Redirect::to('/');
 	});
+
+	Route::get('change/{language}', 'PersonController@change');
 
 	Route::pattern('all', '.*');
 

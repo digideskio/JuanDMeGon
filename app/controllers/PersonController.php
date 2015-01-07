@@ -1,8 +1,12 @@
 <?php
 	class PersonController extends BaseController
 	{
-		public function showPerson()
+		public function showPerson($lang = null)
 	    {
+	    	if($lang != null)
+	    	{
+	    		App::setLocale($lang);
+	    	}
 	        /*
 	        |--------------------------------------------
 	        |Setting personal properties
@@ -158,5 +162,24 @@
 	        */
 	        
 	        return View::make('index',array('person' => $me, 'message' => Session::get('message')));
+	    }
+
+	    public function change($lang)
+	    {
+	    	$language = 'en'; //Is stablished the default value
+
+	    	//Obtaining the colon separated lang values (stablished in .env.*.php file)
+			$supportedLanguages = strtolower(getenv('languages') ?: $defaultLanguage);//If is not stablished then will be the default
+			$supportedLanguages = explode(',', $supportedLanguages); //Exploding by colon the values
+
+			//If the received language is in the supported languages
+			//This is good for fake values, and avoid possible risks
+			if(in_array($lang, $supportedLanguages))
+			{
+				//If is stablished
+				$language = $lang;
+			} 
+
+			return Redirect::to("/$language");//Redirect to root, sending the language
 	    }
 	}

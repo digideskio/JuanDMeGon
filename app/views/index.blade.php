@@ -150,6 +150,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
+        <p class="pull-left"><a href="/change/{{Lang::get('texts.alternative')}}"> {{Lang::get("texts.otherLang")}}</a></p>
         <p class="pull-right"><a href="##myModal" role="button" data-toggle="modal"> <i class="icon-mail"></i> {{Lang::get("texts.contact")}}</a></p>
       </div>
     </footer>
@@ -158,17 +159,16 @@
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel"><i class="icon-mail"></i> Contact Me</h3>
+        <h3 id="myModalLabel"><i class="icon-mail"></i> {{Lang::get('texts.contact')}}</h3>
       </div>
       <div class="modal-body">
         {{ Form::open(array('url' => 'message/')) }}
-          {{Form::token();}}
-          {{ Form::text('name', null, array('placeholder' => 'Your Name', 'required' => 'required'));}}
-          {{ Form::email('email', null, array('placeholder' => 'Your email', 'required' => 'required'));}}
-          {{ Form::url('website', null, array('placeholder' => 'Website (optional)'));}}
-          {{ Form::textarea('message', null, array('placeholder' => 'Your message (max 500) :-)', 'required' => 'required', 'rows' => 3, 'style' => 'width: 80%; max-width: 80%; max-height: 110px;', 'cols' => null));}}
+          {{ Form::text('name', null, array('placeholder' => Lang::get('texts.contactForm.name'), 'required' => 'required'));}}
+          {{ Form::email('email', null, array('placeholder' => Lang::get('texts.contactForm.email'), 'required' => 'required'));}}
+          {{ Form::url('website', null, array('placeholder' => Lang::get('texts.contactForm.website')));}}
+          {{ Form::textarea('message', null, array('placeholder' => Lang::get('texts.contactForm.message'), 'required' => 'required', 'rows' => 3, 'style' => 'width: 80%; max-width: 80%; max-height: 110px;', 'cols' => null));}}
           {{ Form::captcha(array('theme' => 'white'))}}
-          {{Form::button('<i class="icon-paper-plane"></i> SUBMIT', array('type' => 'submit', 'class' => 'btn btn-large'));}}
+          {{Form::button('<i class="icon-paper-plane"></i>'.Lang::get("texts.contactForm.submit"), array('type' => 'submit', 'class' => 'btn btn-large'));}}
         {{ Form::close() }}
       </div>
     </div>
@@ -180,17 +180,17 @@
           <h3 id="myModalLabel2">
             <i class="icon-mail"></i>
             @if($message)
-              Thank you!
+              {{Lang::get('texts.success.title')}}
             @else
-              I'm sorry
+              {{Lang::get('texts.error.title')}}
             @endif
           </h3>
         </div>
         <div class="modal-body">
           @if($message)
-            <p>Thanks for your message. I will contact you soon.</p>
+            <p>{{Lang::get('texts.success.message')}}</p>
           @else
-            <p>Something was wrong sending the message. Please contact me using any social network while I repair the problem.</p>
+            <p>{{Lang::get('texts.error.message')}}</p>
           @endif
         </div>
       </div>
@@ -203,7 +203,7 @@
           <h3 id="myModalLabel3"><i class="icon-mail"></i> Ups!</h3>
         </div>
         <div class="modal-body">
-          <p>Something was wrong with the message fields. Please verify and send again.</p>
+          <p>{{Lang::get('texts.fieldsError')}}</p>
 
           @foreach ($errors->message->all() as $msj)
             <p style="color:red;">{{{$msj}}}</p>
@@ -232,4 +232,3 @@
     </script>
     </body>
     </html>
-    
