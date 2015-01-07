@@ -85,8 +85,8 @@ return array(
 	*/
 
 	'custom' => array(
-		'attribute-name' => array(
-			'rule-name' => 'custom-message',
+		'name' => array(
+			'regex' => 'The :attribute field must have up to two REAL names.',
 		),
 	),
 
@@ -101,6 +101,9 @@ return array(
 	|
 	*/
 
-	'attributes' => array(),
+	'attributes' => array
+	(
+		'g-recaptcha-response' => 'validation'
+	),
 
 );

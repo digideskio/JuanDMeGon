@@ -12,19 +12,9 @@
 			'name'						=> 'required|regex:/^([A-Za-z]{2,10})( [A-Za-z]{2,10}){0,1}$/',
 			'email'						=> 'required|email',
 			'website'					=> 'url',
-			'message'					=> 'required|between:1,500',
+			'message'					=> 'required|between:5,500',
 			'g-recaptcha-response' => 'required|recaptcha'
 			//Legacy//'recaptcha_response_field'	=> 'required|recaptcha'
-		);
-
-		/*
-        |--------------------------------------------
-        |Definning custom message for regex name
-        |--------------------------------------------	        
-        */
-		protected $messages = array
-		(
-			"name.regex"	=> "The :attribute field must have up to two REAL names."
 		);
 
 

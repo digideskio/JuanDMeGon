@@ -7,7 +7,7 @@
 
 		public function setAttributes($name, $title, $description, $picture, $resume)
 		{
-			$this->_id = sha1($name.$title.$description.$picture.$resume);
+			$this->_id = sha1($name.$picture.$resume);
 			$this->name = $name;
 			$this->title = $title;
 			$this->description = $description;
@@ -42,12 +42,16 @@
 
 		public function getTitle()
 		{
-			return $this->title;
+			//Returning title according with the language			
+			$language = App::getLocale();//Language is obtained
+			return $this->title[$language];
 		}
 
 		public function getDescription()
 		{
-			return $this->description;
+			//Returning description according with the language			
+			$language = App::getLocale();//Language is obtained
+			return $this->description[$language];
 		}
 
 		public function getPicture()

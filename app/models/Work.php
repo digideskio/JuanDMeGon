@@ -2,15 +2,16 @@
 	class Work extends Moloquent
 	{
 		//public $timestamps = false;
-		protected $fillable = array('title', 'description', 'image');
+		protected $fillable = array('title', 'description', 'image', 'link');
 		protected $guarded = array('_id');
 
-		public function setAttributes($title, $description, $image)
+		public function setAttributes($title, $description, $image, $link)
 		{
-			$this->_id = sha1($title.$description.$image);
+			$this->_id = sha1($title.$image.$link);
 			$this->title = $title;
 			$this->description = $description;
 			$this->image = $image;
+			$this->link = $link;
 		}
 
 		/*public function person()
@@ -30,11 +31,18 @@
 
 		public function getDescription()
 		{
-			return $this->description;
+			//Returning description according with the language			
+			$language = App::getLocale();//Language is obtained
+			return $this->description[$language];
 		}
 
 		public function getImage()
 		{
 			return $this->image;
+		}
+
+		public function getLink()
+		{
+			return $this->link;
 		}
 	}

@@ -63,10 +63,10 @@
       <div class="navbar-inner">
         <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#profile"><img src="{{{$person->getPicture()}}}" width="75" height="75" /></a>
           <ul class="nav nav-collapse pull-right">
-            <li><a href="#profile"><i class="icon-user"></i> Profile</a></li>
-            <li><a href="#skills"><i class="icon-trophy"></i> Skills</a></li>
-            <li><a href="#work"><i class="icon-picture"></i> Work</a></li>
-            <li><a href="#resume"><i class="icon-doc-text"></i> Resume</a></li>
+            <li><a href="#profile"><i class="icon-user"></i> {{Lang::get("texts.profile")}}</a></li>
+            <li><a href="#skills"><i class="icon-trophy"></i> {{Lang::get("texts.skills")}}</a></li>
+            <li><a href="#work"><i class="icon-picture"></i> {{Lang::get("texts.work")}}</a></li>
+            <li><a href="#resume"><i class="icon-doc-text"></i> {{Lang::get("texts.resume")}}</a></li>
           </ul>
           <!-- Everything you want hidden at 940px or less, place within here -->
           <div class="nav-collapse collapse">
@@ -78,16 +78,16 @@
     <article class="clearfix">
       <!--Profile container-->
       <section id="profile" class="container">
-        <div class="span3"> <img src="{{{$person->getPicture()}}}" style="border-radius: 45%;"> </div>
+        <div class="span3"> <img src="{{$person->getPicture()}}" style="border-radius: 45%;"> </div>
         <div class="span5">
-          <h1>{{{$person->getName()}}}</h1>
-          <h3>{{{$person->getTitle()}}}</h3>
-          <p>{{{$person->getDescription()}}}</p>
-          <a href="##myModal" role="button" data-toggle="modal" class="hire-me"><i class="icon-paper-plane"></i> Hire Me </a>
+          <h1>{{$person->getName()}}</h1>
+          <h3>{{$person->getTitle()}}</h3>
+          <p>{{$person->getDescription()}}</p>
+          <a href="##myModal" role="button" data-toggle="modal" class="hire-me"><i class="icon-paper-plane"></i> {{Lang::get("texts.hire")}} </a>
           <section class="row social">
             <ul class="social-icons">
               @foreach ($person->socialnetworks as $sn)
-                <li><a href="{{{$sn->getLink()}}}" target="_blank"><img src="{{{$sn->getIcon()}}}" alt="facebook"></a></li>
+                <li><a href="{{$sn->getLink()}}" target="_blank"><img src="{{$sn->getIcon()}}" alt="facebook"></a></li>
               @endforeach
             </ul>
           </section>
@@ -98,7 +98,7 @@
       <!--END: Profile container-->
       <!--Skills container-->
       <section id="skills" class="container">
-        <h2>My Skills</h2>
+        <h2>{{Lang::get("texts.skillsTitle")}}</h2>
         @foreach ($person->skills as $sk)
             <div class="row">
               <div class="span3">
@@ -116,12 +116,12 @@
       <!--END: Skills container-->
       <!-- Works container -->
       <section id="work" class="container">
-        <h2>My Work</h2>
+        <h2>{{Lang::get("texts.workTitle")}}</h2>
         <ul class="work-images">
           @foreach ($person->works as $wk)
           <li>
             <div>
-              <a class="fancybox-thumb" rel="fancybox-thumb" href="{{$wk->getImage()}}" title="{{$wk->getTitle()}}"><img class="work" src="{{$wk->getImage()}}" width="245" height="150" /></a>
+              <a class="fancybox-thumb" rel="fancybox-thumb" href="{{$wk->getImage()}}" title="<strong><a href='{{$wk->getLink()}}'  target='_blank'>{{$wk->getTitle()}}</a>: </strong>{{$wk->getDescription()}}"><img class="work" src="{{$wk->getImage()}}" width="245" height="150" /></a>
             </div>
           </li>
           @endforeach
@@ -130,9 +130,9 @@
       <!--END: Work container-->
       <!-- Resume container -->
       <section id="resume" class="container">
-        <h2>My Resume</h2>
-        <h3>You can download my resume for your reference and I hope that we will meet very soon! :)</h3>
-        <div class="btn-center"> <a href="{{$person->getResume()}}" target="_blank" class="hire-me"><i class="icon-download"></i> Download Resume</a>
+        <h2>{{Lang::get("texts.resumeTitle")}}</h2>
+        <h3>{{Lang::get("texts.resumeMessage")}}</h3>
+        <div class="btn-center"> <a href="{{$person->getResume()}}" target="_blank" class="hire-me"><i class="icon-download"></i> {{Lang::get("texts.resumeDownload")}}</a>
           <h2>80kb</h2>
         </div>
       </section>
@@ -150,7 +150,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p class="pull-right"><a href="##myModal" role="button" data-toggle="modal"> <i class="icon-mail"></i> CONTACT</a></p>
+        <p class="pull-right"><a href="##myModal" role="button" data-toggle="modal"> <i class="icon-mail"></i> {{Lang::get("texts.contact")}}</a></p>
       </div>
     </footer>
     <!-- Contact form in Modal -->
@@ -232,3 +232,4 @@
     </script>
     </body>
     </html>
+    
