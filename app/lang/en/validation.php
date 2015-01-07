@@ -86,7 +86,7 @@ return array(
 
 	'custom' => array(
 		'name' => array(
-			'regex' => 'The :attribute field must have up to two REAL names.',
+			'regex' => 'The :attribute field must have up to two REAL names and two surnames.',
 		),
 	),
 

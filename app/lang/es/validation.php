@@ -86,7 +86,7 @@ return array(
 
 	'custom' => array(
 		'name' => array(
-			'regex' => 'El campo :attribute puede tener hasta dos nombres REALES.',
+			'regex' => 'El campo :attribute puede tener hasta dos nombres y dos apellidos REALES.',
 		),
 	),
 

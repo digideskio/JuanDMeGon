@@ -9,7 +9,7 @@
         */
 		protected $rules = array
 		(
-			'name'						=> 'required|regex:/^([A-Za-z]{2,10})( [A-Za-z]{2,10}){0,1}$/',
+			'name'						=> 'required|regex:/^([A-Za-z]{2,10}[ ]{0,1})( [A-Za-z]{2,10}[ ]{0,1}){0,3}$/',
 			'email'						=> 'required|email',
 			'website'					=> 'url',
 			'message'					=> 'required|between:5,500',
