@@ -144,6 +144,37 @@
 	        	), 'img/progya.png', 'http://www.programarya.com');
 	        //$me->works()->saveMany(array($py, $pg, $slo4dtv, $aap, $sofing, $fc));
 	        //$me->works()->save($py);
+	        //
+	        
+	        /*
+	        |--------------------------------------------
+	        |Seting personal courses
+	        |--------------------------------------------	        
+	        */
+	        $javaApi = new Course();
+	        $laravelApi = new Course();
+	        $laravelApiEng = new Course();
+	        $javaApi->setAttributes('Sólo $9 USD. Servicios Web o API RESTful Desde Cero con Java y Apache Tomcat',
+	        	array
+	        	(
+	        		'en' => 'Web services development using complex types, JSON, XML and TXT. Using tird party web services (Facebook, Youtube, etc).',
+	        		'es' => 'Desarrollo de servicios web con datos complejos, JSON, XML y TXT. Uso de servicios de terceros (Facebook, YouTube, etc).'
+	        	), 'img/apijava.png', 'https://www.udemy.com/servicios-o-api-restful-desde-cero-con-java-apache-tomcat-json-y-xml/?couponCode=portfolio');
+
+	        $laravelApi->setAttributes('Sólo $9 USD. Laravel 5. PHP ágil y práctico. Crea tu API RESTful',
+	        	array
+	        	(
+	        		'en' => 'Develop your API in local (with Apache), publish it in a Linux VPS (with Nginx) using Github, composer, PHP and MySQL.',
+	        		'es' => 'Desarrolla tu API en local (Apache), llévala a producción en un VPS Linux (Nginx) con Github, Composer, PHP y MySQL'
+	        	), 'img/laravel.jpg', 'https://www.udemy.com/api-restful-con-laravel-5-composer-apache-nginx-mysql-git-y-github/?couponCode=portfolio');
+	        $laravelApiEng->setAttributes('Only $9 USD.  Laravel 5. Agile and practical PHP. Your own RESTful API.',
+	        	array
+	        	(
+	        		'en' => 'Develop your API in local (with Apache), publish it in a Linux VPS (with Nginx) using Github, composer, PHP and MySQL.',
+	        		'es' => 'Desarrolla tu API en local (Apache), llévala a producción en un VPS Linux (Nginx) con Github, Composer, PHP y MySQL'
+	        	), 'img/laravel.jpg', 'https://www.udemy.com/laravel-5-php-framework-agile-and-practical-php-restful-api/?couponCode=portfolio');
+	        //$me->courses()->saveMany(array($laravelApiEng, $javaApi, $laravelApi));
+	        //$me->works()->save($py);
 
 
 

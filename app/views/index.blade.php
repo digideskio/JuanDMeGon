@@ -125,9 +125,21 @@
             </div>
           </li>
           @endforeach
-        <!--Dummy images by The Fox And King :: http://dribbble.com/snootyfox-->
       </section>
       <!--END: Work container-->
+      <!-- Courses container -->
+      <section id="work" class="container">
+        <h2>{{Lang::get("texts.coursesTitle")}}</h2>
+        <ul class="work-images">
+          @foreach ($person->courses as $cors)
+          <li>
+            <div>
+              <a class="fancybox-thumb courses" rel="courses" href="{{$cors->getImage()}}" title="<strong><a href='{{$cors->getLink()}}'  target='_blank'>{{$cors->getTitle()}}</a>: </strong>{{$cors->getDescription()}}"><img class="work" src="{{$cors->getImage()}}" width="245" height="150" /></a>
+            </div>
+          </li>
+          @endforeach
+      </section>
+      <!--END: course container-->
       <!-- Resume container -->
       <section id="resume" class="container">
         <h2>{{Lang::get("texts.resumeTitle")}}</h2>

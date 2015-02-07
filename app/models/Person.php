@@ -30,6 +30,11 @@
 	        return $this->embedsMany('Work');
 	    }
 
+	    public function courses()
+	    {
+	        return $this->embedsMany('Course');
+	    }
+
 		public function getId()
 		{
 			return $this->_id;
