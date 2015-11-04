@@ -1,12 +1,5 @@
-/bootstrap/compiled.php
 /vendor
-composer.phar
-composer.lock
-.env.*.php
-.env.php
-.DS_Store
-Thumbs.db
-
-# Site configurations
-*.sublime-workspace
-*.sublime-project
+/node_modules
+Homestead.yaml
+Homestead.json
+.env

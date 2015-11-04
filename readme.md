@@ -1,42 +1,27 @@
-# JuanDMeGon Portfolio
+## Laravel PHP Framework
 
-This repository is a personal porfolio, deployed in http://www.juandmegon.com/ with professional information about me (Juan David Meza González). You can use this repo like a base code to your proper portfolio.
+[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
+[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
+[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-This portfolio is developed using [Laravel](http://laravel.com/) and [MongoDB](http://www.mongodb.org/) as default database manager, through the [jenssegers/laravel-mongodb](https://github.com/jenssegers/laravel-mongodb) repository.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-## How To Install and configure
+Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-- If you are going to use MongoDB as database manager, make sure you have the MongoDB PHP driver installed. You can find installation instructions at http://php.net/manual/en/mongo.installation.php. Of course you will need a local or remote MongoDB instance which provide you the API data.
+## Official Documentation
 
->Note: In Ubuntu 14.04 issue:
-```sh
-$ sudo apt-get install php5-mongo
-```
->For other OS or distros use the official PHP or MongoDB documents.
+Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-- Download the project source, then you must configure your sensitive data like database username or password. To do this, use the '.env.*.php' files, (see [.env.example](.env.example) for details) in this files you have to stablish your database connection data (database hosts and name, port, user and password ) the crypt key (is different for every Laravel instance), the default project url and the list of supported languages (separated by colon).
+## Contributing
 
->Note: You must have at least a file called '.env.php' (notice the dot at the beginning) to apply the config on all environments.
->If you want to set different sensitive data values by the environment you must first configure every desired environment in laravel (see [laravel environment configuration](http://laravel.com/docs/4.2/configuration#environment-configuration) for details) and then create a file called '.env.environmentName.php for example: '.env.local.php' or '.env.develop.php'. (see [laravel sensitive data](http://laravel.com/docs/4.2/configuration#protecting-sensitive-configuration) for details)
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-- Finally, to install all the project dependencies and finish your installation, run:
-```sh
-composer install
-```
-> (see [composer.json](composer.json) file for details or [composer website](https://getcomposer.org/))
+## Security Vulnerabilities
 
-##Multilanguage
-This project use Laravel localization configuration to support multiple languages [see details](http://laravel.com/docs/4.2/localization). It detect automatically the language of the user, based in his browser (si the end of the [app/start/global.php](app/start/global.php)file to the detailed code. The locale value is available through the Language::get() method.
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
->Note: You must create and stablish the corresponding subfolders for every supported language in the app/locale folder. See the documentetation for details [Laravel localizatio: language files](http://laravel.com/docs/4.2/localization#language-files).
+### License
 
-### Basic database Schema
-Do not worry about the database scheme, if you are using MongoDB, Moloquent will create the accordly nested scheme for you.
-        
-Take into account that the portfolio provide Person, Skill, SocialNetwork and Work models (see the [app/models](app/models) folder) which provides a method (setAttributes) which going to stablish the '_id' attribute automatically based on the value of the attributes.
-
-### Contributing To this Repo
-
-**All issues and pull requests should be filed on the [JuanDMeGon/JuanDMeGon](https://github.com/JuanDMeGon/JuanDMeGon) repository.**
-
-> If you want to collaborate to improve the translation of readme.md file, syntax and grammar, you are welcome :).
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
