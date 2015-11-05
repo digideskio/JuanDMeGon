@@ -4,7 +4,7 @@ namespace Portfolio;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Job extends Model
 {
 	use \Dimsav\Translatable\Translatable;
 
