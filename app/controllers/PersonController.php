@@ -35,7 +35,7 @@
 			$picture = 'img/me.jpg';
 			$resume = 'resources/CV.pdf';
 			$me->setAttributes($name, $title, $description, $picture, $resume);
-			$me->save();
+			//$me->save();
 
 			/*
 	        |--------------------------------------------
@@ -47,8 +47,9 @@
 			$linkedin = SocialNetwork::getLinkedIn('juan-david-meza-gonzález/55/558/407');
 			$github = SocialNetwork::getGitHub('JuanDMeGon');
 			$youtube = SocialNetwork::getYouTube('UC9yijqf0bO1NjIGUQ-dkBvg');
-			$me->socialnetworks()->saveMany(array($github, $facebook, $twitter, $linkedin, $youtube));
+			//$me->socialnetworks()->saveMany(array($github, $facebook, $twitter, $linkedin, $youtube));
 			//$me->socialnetworks()->save($youtube);
+			$me->socialnetworks = array($github, $facebook, $twitter, $linkedin, $youtube);
 
 			/*
 	        |--------------------------------------------
@@ -87,7 +88,8 @@
 			$laravel->setAttributes('Laravel', 85, 'L', '#4950F0');
 			//$me->skills()->save($git);
 			//$me->skills()->saveMany(array($git, $laravel));
-			$me->skills()->saveMany(array($html5, $css3, $jquery, $javascript, $php, $git, $laravel, $seo, $webservices, $ee, $sw, $android, $jsp, $db, $xml));
+			//$me->skills()->saveMany(array($html5, $css3, $jquery, $javascript, $php, $git, $laravel, $seo, $webservices, $ee, $sw, $android, $jsp, $db, $xml));
+			$me->skills = array($html5, $css3, $jquery, $javascript, $php, $git, $laravel, $seo, $webservices, $ee, $sw, $android, $jsp, $db, $xml);
 
 
 			/*
@@ -142,9 +144,9 @@
 	        		'en' => 'Improved version of aprenderaprogramar.com.co. Implemented in a new domain with a new appearence and new functionalities.',
 	        		'es' => 'Versión mejorada de aprenderaprogramar.com.co. Con implementaciones de un nuevo dominio con una nueva imágen, junto con nuevas funcionalidades.'
 	        	), 'img/progya.png', 'http://www.programarya.com');
-	        $me->works()->saveMany(array($py, $pg, $slo4dtv, $aap, $sofing, $fc));
+	        //$me->works()->saveMany(array($py, $pg, $slo4dtv, $aap, $sofing, $fc));
 	        //$me->works()->save($py);
-	        //
+	        $me->works = array($py, $pg, $slo4dtv, $aap, $sofing, $fc);
 	        
 	        /*
 	        |--------------------------------------------
@@ -173,8 +175,9 @@
 	        		'en' => 'Develop your API in local (with Apache), publish it in a Linux VPS (with Nginx) using Github, composer, PHP and MySQL.',
 	        		'es' => 'Desarrolla tu API en local (Apache), llévala a producción en un VPS Linux (Nginx) con Github, Composer, PHP y MySQL'
 	        	), 'img/laravel.jpg', 'https://www.udemy.com/laravel-5-php-framework-agile-and-practical-php-restful-api/?couponCode=portfolio');
-	        $me->courses()->saveMany(array($laravelApiEng, $javaApi, $laravelApi));
+	        //$me->courses()->saveMany(array($laravelApiEng, $javaApi, $laravelApi));
 	        //$me->works()->save($py);
+	        $me->courses = array($laravelApiEng, $javaApi, $laravelApi);
 
 
 
@@ -183,7 +186,7 @@
 	        |Obtaining info from database (mongo)
 	        |--------------------------------------------	        
 	        */
-	        $me = Person::remember(60*24*30)->first();//Caching query results for 30 days
+	        //$me = Person::remember(60*24*30)->first();//Caching query results for 30 days
 	        //$me = Person::first();
 
 	        /*
@@ -200,7 +203,7 @@
 	    	$language = 'en'; //Is stablished the default value
 
 	    	//Obtaining the colon separated lang values (stablished in .env.*.php file)
-			$supportedLanguages = strtolower(getenv('languages') ?: $defaultLanguage);//If is not stablished then will be the default
+			$supportedLanguages = strtolower(getenv('languages') ?: $language);//If is not stablished then will be the default
 			$supportedLanguages = explode(',', $supportedLanguages); //Exploding by colon the values
 
 			//If the received language is in the supported languages

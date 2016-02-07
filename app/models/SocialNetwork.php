@@ -3,11 +3,11 @@
 	{
 		//public $timestamps = false;
 		protected $fillable = array('name', 'link', 'icon');
-		protected $guarded = array('_id');
+		protected $guarded = array('id');
 
 		public function setAttributes($name, $link, $icon)
 		{
-			$this->_id = sha1($name.$link.$icon);
+			$this->id = sha1($name.$link.$icon);
 			$this->name = $name;
 			$this->link = $link;
 			$this->icon = $icon;

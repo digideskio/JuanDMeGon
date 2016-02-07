@@ -3,11 +3,11 @@
 	{
 		//public $timestamps = false;
 		protected $fillable = array('title', 'description', 'image', 'link');
-		protected $guarded = array('_id');
+		protected $guarded = array('id');
 
 		public function setAttributes($title, $description, $image, $link)
 		{
-			$this->_id = sha1($title.$image.$link);
+			$this->id = sha1($title.$image.$link);
 			$this->title = $title;
 			$this->description = $description;
 			$this->image = $image;
@@ -21,7 +21,7 @@
 
 	    public function getId()
 		{
-			return $this->_id;
+			return $this->id;
 		}
 
 		public function getTitle()

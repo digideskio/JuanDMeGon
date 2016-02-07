@@ -3,11 +3,11 @@
 	{
 		//public $timestamps = false;
 		protected $fillable = array('name', 'level', 'shortname', 'color');
-		protected $guarded = array('_id');
+		protected $guarded = array('id');
 
 		public function setAttributes($name, $level, $shortname, $color)
 		{
-			$this->_id = sha1($name.$level.$shortname.$color);
+			$this->id = sha1($name.$level.$shortname.$color);
 			$this->name = $name;
 			$this->level = $level;
 			$this->shortname = $shortname;
@@ -21,7 +21,7 @@
 
 	    public function getId()
 		{
-			return $this->_id;
+			return $this->id;
 		}
 
 		public function getName()
