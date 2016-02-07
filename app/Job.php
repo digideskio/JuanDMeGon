@@ -11,6 +11,7 @@ class Job extends Model
 	public $translatedAttributes = ['title', 'description'];
 	protected $fillable = ['title', 'description', 'image', 'link', 'person_id'];
 	protected $guarded = ['id'];
+	protected $with = ['translations'];
 
 	public function person()
 	{

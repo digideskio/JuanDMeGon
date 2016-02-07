@@ -11,6 +11,7 @@ class Person extends Model
 	public $translatedAttributes = ['name', 'title', 'description'];
 	protected $fillable = ['name', 'title', 'description', 'picture', 'resume'];
 	protected $guarded = ['id'];
+	protected $with = ['translations'];
 
 	public function skills()
 	{
