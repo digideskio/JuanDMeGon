@@ -1,5 +1,5 @@
 <?php
-	class Skill extends Moloquent
+	class Skill extends Eloquent
 	{
 		//public $timestamps = false;
 		protected $fillable = array('name', 'level', 'shortname', 'color');

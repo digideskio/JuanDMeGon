@@ -1,5 +1,5 @@
 <?php
-	class Work extends Moloquent
+	class Work extends Eloquent
 	{
 		//public $timestamps = false;
 		protected $fillable = array('title', 'description', 'image', 'link');

@@ -1,5 +1,5 @@
 <?php
-	class SocialNetwork extends Moloquent
+	class SocialNetwork extends Eloquent
 	{
 		//public $timestamps = false;
 		protected $fillable = array('name', 'link', 'icon');

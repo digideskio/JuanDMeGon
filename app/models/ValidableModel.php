@@ -1,6 +1,6 @@
 <?php
 
-	class ValidableModel extends Moloquent
+	class ValidableModel extends Eloquent
 	{
 		/*
         |--------------------------------------------

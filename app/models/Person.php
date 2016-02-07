@@ -1,5 +1,5 @@
 <?php
-	class Person extends Moloquent
+	class Person extends Eloquent
 	{
 		//public $timestamps = false;
 		protected $fillable = array('name', 'title', 'description', 'picture', 'resume');
