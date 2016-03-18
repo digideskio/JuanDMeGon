@@ -3,7 +3,7 @@
 	{
 		public function showPerson($lang = null)
 	    {
-	    	if($lang != null)
+	    	if($lang != null && ($lang === 'es' || $lang === 'en'))
 	    	{
 	    		App::setLocale($lang);
 	    	}
